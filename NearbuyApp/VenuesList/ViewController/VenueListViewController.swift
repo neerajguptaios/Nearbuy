@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class VenueListViewController: UIViewController {
     @IBOutlet weak var sliderLabel: UILabel!
@@ -27,7 +28,8 @@ class VenueListViewController: UIViewController {
         }
     }
 
-    
+    private let locationManager = CLLocationManager()
+
     init(viewModel: VenueListViewModelProtocol) {
         self.viewModel =  viewModel
         super.init(nibName: Self.className, bundle: nil)
@@ -41,6 +43,15 @@ class VenueListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestWhenInUseAuthorization()
+        
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+
         
         // Do any additional setup after loading the view.
     }
@@ -54,6 +65,14 @@ class VenueListViewController: UIViewController {
         
     }
     
+}
+
+extension VenueListViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        viewModel.updateLacation(lat: locValue.latitude, lon: locValue.longitude)
+    }
 }
 
 
@@ -97,3 +116,4 @@ extension VenueListViewController {
         
     }
 }
+
