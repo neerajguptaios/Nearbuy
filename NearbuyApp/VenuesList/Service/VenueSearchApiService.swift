@@ -41,8 +41,7 @@ class VenueSearchApiService: VenueSearchApiProtocol {
                                          queryParam: requestQueryParams.convertToDictionary(),
                                          customHeader: nil,
                                          resultType: VenueListResponseDTO.self) { result in
-            DispatchQueue.main.async {[weak self, result] in
-                guard let self = self else { return }
+            DispatchQueue.main.async {
                 switch result {
                 case .success((let venues, _)):
                     completion(.success(venues))

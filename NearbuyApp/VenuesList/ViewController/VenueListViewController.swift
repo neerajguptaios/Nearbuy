@@ -9,6 +9,9 @@ import UIKit
 import CoreLocation
 
 class VenueListViewController: UIViewController {
+    
+    private let reuseIdentifierString : String = "reuse_cell_identifier_venue_list"
+    
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var distanceSlider: UISlider!
     
@@ -43,15 +46,14 @@ class VenueListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.requestWhenInUseAuthorization()
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-
         
         // Do any additional setup after loading the view.
     }
@@ -90,30 +92,34 @@ extension VenueListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierString)
+
+        if(cell == nil)
+        {
+            cell = UITableViewCell(style: .default, reuseIdentifier: reuseIdentifierString)
+        }
+        if let model = viewModel.getVenueForIndexPath(indexPath: indexPath) {
+            cell?.textLabel?.text = model.name
+        }
+        return cell!
     }
 }
 
 extension VenueListViewController : VenueListViewModelDelegate{
-    func didFetchedVenuesSuccessfully(indexPaths: [IndexPath]?) {
-        <#code#>
+    func update(indexPaths: [IndexPath], completion: ((_ completed: Bool) -> Void)) {
+        tableView.beginUpdates()
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.endUpdates()
+        completion(true)
     }
     
     func didReceivedErrorWhileFetchingVenues(errorMessage: String) {
-        <#code#>
+        // handle error
     }
     
     func didReceivedEmptyResponse() {
-        <#code#>
+        // handle empty response
     }
     
     
 }
-
-extension VenueListViewController {
-    private func addRowsInTableView(with indexPaths: [IndexPath]?) {
-        // Removing paginating cell and adding new cell
-        
-    }
-}
-

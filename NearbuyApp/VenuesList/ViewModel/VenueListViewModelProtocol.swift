@@ -8,7 +8,6 @@
 import Foundation
 
 protocol VenueListViewModelProtocol {
-    var dataSource: [VenueDTO] { get }
     
     var delegate: VenueListViewModelDelegate? { get set }
     var venueSearchApiService: VenueSearchApiProtocol { get }
@@ -18,16 +17,18 @@ protocol VenueListViewModelProtocol {
     
     func getVenues()
     func loadMoreVenues()
+    
     func getNumberOfVenues() -> Int
+    func getVenueForIndexPath(indexPath: IndexPath) -> VenueDTO?
+    
     func isNextBatchAvailable() -> Bool
-    func isAtLastIndexForPagination(_ row: Int) -> Bool
     
     func willDisplayIndexPath(indexPath: IndexPath)
 }
 
 
 protocol VenueListViewModelDelegate: AnyObject {
-    func didFetchedVenuesSuccessfully(indexPaths: [IndexPath]?)
+    func update(indexPaths: [IndexPath], completion: ((_ completed: Bool) -> Void))
     func didReceivedErrorWhileFetchingVenues(errorMessage: String)
     func didReceivedEmptyResponse()
 }
