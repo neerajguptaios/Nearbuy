@@ -9,13 +9,35 @@
 /* Begin PBXBuildFile section */
 		F82DB5242B2D792700C1619B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5232B2D792700C1619B /* AppDelegate.swift */; };
 		F82DB5262B2D792700C1619B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5252B2D792700C1619B /* SceneDelegate.swift */; };
-		F82DB5282B2D792700C1619B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5272B2D792700C1619B /* ViewController.swift */; };
 		F82DB52B2B2D792700C1619B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82DB5292B2D792700C1619B /* Main.storyboard */; };
 		F82DB52D2B2D792900C1619B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82DB52C2B2D792900C1619B /* Assets.xcassets */; };
 		F82DB5302B2D792900C1619B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82DB52E2B2D792900C1619B /* LaunchScreen.storyboard */; };
 		F82DB53B2B2D792900C1619B /* NearbuyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB53A2B2D792900C1619B /* NearbuyAppTests.swift */; };
 		F82DB5452B2D792900C1619B /* NearbuyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5442B2D792900C1619B /* NearbuyAppUITests.swift */; };
 		F82DB5472B2D792900C1619B /* NearbuyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5462B2D792900C1619B /* NearbuyAppUITestsLaunchTests.swift */; };
+		F82DB5562B2D79EA00C1619B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5542B2D79EA00C1619B /* WebViewController.swift */; };
+		F82DB5572B2D79EA00C1619B /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82DB5552B2D79EA00C1619B /* WebViewController.xib */; };
+		F82DB55B2B2D7A4B00C1619B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB55A2B2D7A4B00C1619B /* UITableView+Extension.swift */; };
+		F82DB55D2B2D7AB300C1619B /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB55C2B2D7AB300C1619B /* UITableViewCell+Extension.swift */; };
+		F82DB55F2B2D7B0400C1619B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB55E2B2D7B0400C1619B /* NSObject+Extension.swift */; };
+		F82DB5612B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5602B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift */; };
+		F82DB5632B2D7B2800C1619B /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5622B2D7B2800C1619B /* Optional+Extension.swift */; };
+		F82DB5652B2D7C2200C1619B /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5642B2D7C2200C1619B /* Encodable+Extension.swift */; };
+		F82DB5672B2D7C7400C1619B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5662B2D7C7400C1619B /* Array+Extension.swift */; };
+		F82DB56A2B2D7D4500C1619B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5692B2D7D4500C1619B /* NetworkingManager.swift */; };
+		F82DB56C2B2D7D7A00C1619B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB56B2B2D7D7A00C1619B /* NetworkError.swift */; };
+		F82DB56F2B2D7D9600C1619B /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB56E2B2D7D9600C1619B /* ApiConstants.swift */; };
+		F82DB5712B2D800900C1619B /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5702B2D800900C1619B /* GeneralUtil.swift */; };
+		F82DB57B2B2D80EA00C1619B /* VenueListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5792B2D80EA00C1619B /* VenueListTableViewCell.swift */; };
+		F82DB57C2B2D80EA00C1619B /* VenueListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82DB57A2B2D80EA00C1619B /* VenueListTableViewCell.xib */; };
+		F82DB57F2B2D820800C1619B /* VenueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB57E2B2D820800C1619B /* VenueListViewModel.swift */; };
+		F82DB5812B2D821800C1619B /* VenueListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5802B2D821800C1619B /* VenueListViewModelProtocol.swift */; };
+		F82DB5852B2D847E00C1619B /* VenueListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5842B2D847E00C1619B /* VenueListRequestDTO.swift */; };
+		F82DB5872B2D865500C1619B /* VenueSearchApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5862B2D865500C1619B /* VenueSearchApiProtocol.swift */; };
+		F82DB5892B2D868300C1619B /* VenueSearchApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5882B2D868300C1619B /* VenueSearchApiService.swift */; };
+		F82DB58B2B2D886200C1619B /* VenueListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB58A2B2D886200C1619B /* VenueListResponseDTO.swift */; };
+		F82DB58E2B2D91FA00C1619B /* VenueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB58C2B2D91FA00C1619B /* VenueListViewController.swift */; };
+		F82DB58F2B2D91FA00C1619B /* VenueListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82DB58D2B2D91FA00C1619B /* VenueListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +61,6 @@
 		F82DB5202B2D792700C1619B /* NearbuyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbuyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82DB5232B2D792700C1619B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F82DB5252B2D792700C1619B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F82DB5272B2D792700C1619B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F82DB52A2B2D792700C1619B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F82DB52C2B2D792900C1619B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F82DB52F2B2D792900C1619B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +70,29 @@
 		F82DB5402B2D792900C1619B /* NearbuyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbuyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82DB5442B2D792900C1619B /* NearbuyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbuyAppUITests.swift; sourceTree = "<group>"; };
 		F82DB5462B2D792900C1619B /* NearbuyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbuyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F82DB5542B2D79EA00C1619B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F82DB5552B2D79EA00C1619B /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		F82DB55A2B2D7A4B00C1619B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		F82DB55C2B2D7AB300C1619B /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		F82DB55E2B2D7B0400C1619B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		F82DB5602B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extension.swift"; sourceTree = "<group>"; };
+		F82DB5622B2D7B2800C1619B /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		F82DB5642B2D7C2200C1619B /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		F82DB5662B2D7C7400C1619B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		F82DB5692B2D7D4500C1619B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		F82DB56B2B2D7D7A00C1619B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F82DB56E2B2D7D9600C1619B /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		F82DB5702B2D800900C1619B /* GeneralUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUtil.swift; sourceTree = "<group>"; };
+		F82DB5792B2D80EA00C1619B /* VenueListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListTableViewCell.swift; sourceTree = "<group>"; };
+		F82DB57A2B2D80EA00C1619B /* VenueListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueListTableViewCell.xib; sourceTree = "<group>"; };
+		F82DB57E2B2D820800C1619B /* VenueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModel.swift; sourceTree = "<group>"; };
+		F82DB5802B2D821800C1619B /* VenueListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModelProtocol.swift; sourceTree = "<group>"; };
+		F82DB5842B2D847E00C1619B /* VenueListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListRequestDTO.swift; sourceTree = "<group>"; };
+		F82DB5862B2D865500C1619B /* VenueSearchApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchApiProtocol.swift; sourceTree = "<group>"; };
+		F82DB5882B2D868300C1619B /* VenueSearchApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchApiService.swift; sourceTree = "<group>"; };
+		F82DB58A2B2D886200C1619B /* VenueListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListResponseDTO.swift; sourceTree = "<group>"; };
+		F82DB58C2B2D91FA00C1619B /* VenueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewController.swift; sourceTree = "<group>"; };
+		F82DB58D2B2D91FA00C1619B /* VenueListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +143,11 @@
 		F82DB5222B2D792700C1619B /* NearbuyApp */ = {
 			isa = PBXGroup;
 			children = (
+				F82DB5722B2D804100C1619B /* VenuesList */,
+				F82DB5582B2D7A2400C1619B /* SupportingResources */,
+				F82DB5532B2D79C300C1619B /* WebView */,
 				F82DB5232B2D792700C1619B /* AppDelegate.swift */,
 				F82DB5252B2D792700C1619B /* SceneDelegate.swift */,
-				F82DB5272B2D792700C1619B /* ViewController.swift */,
 				F82DB5292B2D792700C1619B /* Main.storyboard */,
 				F82DB52C2B2D792900C1619B /* Assets.xcassets */,
 				F82DB52E2B2D792900C1619B /* LaunchScreen.storyboard */,
@@ -125,6 +171,114 @@
 				F82DB5462B2D792900C1619B /* NearbuyAppUITestsLaunchTests.swift */,
 			);
 			path = NearbuyAppUITests;
+			sourceTree = "<group>";
+		};
+		F82DB5532B2D79C300C1619B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB5542B2D79EA00C1619B /* WebViewController.swift */,
+				F82DB5552B2D79EA00C1619B /* WebViewController.xib */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		F82DB5582B2D7A2400C1619B /* SupportingResources */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB56D2B2D7D8B00C1619B /* Constants */,
+				F82DB5682B2D7C8400C1619B /* Networking */,
+				F82DB5592B2D7A3800C1619B /* Extensions */,
+				F82DB5702B2D800900C1619B /* GeneralUtil.swift */,
+			);
+			path = SupportingResources;
+			sourceTree = "<group>";
+		};
+		F82DB5592B2D7A3800C1619B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB55A2B2D7A4B00C1619B /* UITableView+Extension.swift */,
+				F82DB55C2B2D7AB300C1619B /* UITableViewCell+Extension.swift */,
+				F82DB55E2B2D7B0400C1619B /* NSObject+Extension.swift */,
+				F82DB5602B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift */,
+				F82DB5622B2D7B2800C1619B /* Optional+Extension.swift */,
+				F82DB5642B2D7C2200C1619B /* Encodable+Extension.swift */,
+				F82DB5662B2D7C7400C1619B /* Array+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F82DB5682B2D7C8400C1619B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB5692B2D7D4500C1619B /* NetworkingManager.swift */,
+				F82DB56B2B2D7D7A00C1619B /* NetworkError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F82DB56D2B2D7D8B00C1619B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB56E2B2D7D9600C1619B /* ApiConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F82DB5722B2D804100C1619B /* VenuesList */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB5832B2D826A00C1619B /* Model */,
+				F82DB5822B2D826400C1619B /* Service */,
+				F82DB57D2B2D81F000C1619B /* ViewModel */,
+				F82DB5782B2D80C200C1619B /* Cells */,
+				F82DB5732B2D806800C1619B /* ViewController */,
+			);
+			path = VenuesList;
+			sourceTree = "<group>";
+		};
+		F82DB5732B2D806800C1619B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB58C2B2D91FA00C1619B /* VenueListViewController.swift */,
+				F82DB58D2B2D91FA00C1619B /* VenueListViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F82DB5782B2D80C200C1619B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB5792B2D80EA00C1619B /* VenueListTableViewCell.swift */,
+				F82DB57A2B2D80EA00C1619B /* VenueListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F82DB57D2B2D81F000C1619B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB57E2B2D820800C1619B /* VenueListViewModel.swift */,
+				F82DB5802B2D821800C1619B /* VenueListViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F82DB5822B2D826400C1619B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB5862B2D865500C1619B /* VenueSearchApiProtocol.swift */,
+				F82DB5882B2D868300C1619B /* VenueSearchApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F82DB5832B2D826A00C1619B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F82DB5842B2D847E00C1619B /* VenueListRequestDTO.swift */,
+				F82DB58A2B2D886200C1619B /* VenueListResponseDTO.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +385,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82DB58F2B2D91FA00C1619B /* VenueListViewController.xib in Resources */,
 				F82DB5302B2D792900C1619B /* LaunchScreen.storyboard in Resources */,
 				F82DB52D2B2D792900C1619B /* Assets.xcassets in Resources */,
 				F82DB52B2B2D792700C1619B /* Main.storyboard in Resources */,
+				F82DB5572B2D79EA00C1619B /* WebViewController.xib in Resources */,
+				F82DB57C2B2D80EA00C1619B /* VenueListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +415,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82DB5282B2D792700C1619B /* ViewController.swift in Sources */,
+				F82DB57F2B2D820800C1619B /* VenueListViewModel.swift in Sources */,
+				F82DB56F2B2D7D9600C1619B /* ApiConstants.swift in Sources */,
+				F82DB5852B2D847E00C1619B /* VenueListRequestDTO.swift in Sources */,
+				F82DB55D2B2D7AB300C1619B /* UITableViewCell+Extension.swift in Sources */,
+				F82DB55B2B2D7A4B00C1619B /* UITableView+Extension.swift in Sources */,
+				F82DB5672B2D7C7400C1619B /* Array+Extension.swift in Sources */,
+				F82DB5712B2D800900C1619B /* GeneralUtil.swift in Sources */,
+				F82DB5652B2D7C2200C1619B /* Encodable+Extension.swift in Sources */,
 				F82DB5242B2D792700C1619B /* AppDelegate.swift in Sources */,
+				F82DB58B2B2D886200C1619B /* VenueListResponseDTO.swift in Sources */,
+				F82DB5632B2D7B2800C1619B /* Optional+Extension.swift in Sources */,
+				F82DB58E2B2D91FA00C1619B /* VenueListViewController.swift in Sources */,
 				F82DB5262B2D792700C1619B /* SceneDelegate.swift in Sources */,
+				F82DB5612B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift in Sources */,
+				F82DB56A2B2D7D4500C1619B /* NetworkingManager.swift in Sources */,
+				F82DB56C2B2D7D7A00C1619B /* NetworkError.swift in Sources */,
+				F82DB5892B2D868300C1619B /* VenueSearchApiService.swift in Sources */,
+				F82DB57B2B2D80EA00C1619B /* VenueListTableViewCell.swift in Sources */,
+				F82DB5562B2D79EA00C1619B /* WebViewController.swift in Sources */,
+				F82DB5872B2D865500C1619B /* VenueSearchApiProtocol.swift in Sources */,
+				F82DB55F2B2D7B0400C1619B /* NSObject+Extension.swift in Sources */,
+				F82DB5812B2D821800C1619B /* VenueListViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

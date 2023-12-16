@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VenueListViewController" customModule="NearbuyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="distanceSlider" destination="LIH-ms-h3w" id="rfu-P3-9Z9"/>
+                <outlet property="emptyStateStackView" destination="Oqm-1h-Iou" id="FUS-pc-c7Q"/>
+                <outlet property="errorMessageLabel" destination="ALa-QW-TFS" id="f2n-gd-dG1"/>
+                <outlet property="searchBar" destination="UIN-sv-DvQ" id="yyV-4R-aRC"/>
+                <outlet property="sliderLabel" destination="bB7-x8-l5U" id="LoP-nX-803"/>
+                <outlet property="tableView" destination="ZpU-5c-szb" id="yhb-mX-LBm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZpU-5c-szb">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <searchBar key="tableFooterView" contentMode="redraw" id="UIN-sv-DvQ">
+                        <rect key="frame" x="0.0" y="894" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VqC-RO-O5o">
+                    <rect key="frame" x="-12" y="761.66666666666663" width="393" height="44.333333333333371"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="LIH-ms-h3w">
+                            <rect key="frame" x="-2" y="0.0" width="397" height="31"/>
+                            <connections>
+                                <action selector="distanceSlderValueChanged:" destination="-1" eventType="valueChanged" id="qeM-KY-01D"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants within 5 miles of current location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB7-x8-l5U">
+                            <rect key="frame" x="0.0" y="29.999999999999996" width="393" height="14.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Oqm-1h-Iou">
+                    <rect key="frame" x="106.33333333333333" y="411.33333333333331" width="180.33333333333337" height="54.666666666666686"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALa-QW-TFS" userLabel="Something went wrong">
+                            <rect key="frame" x="0.0" y="0.0" width="180.33333333333334" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAc-lj-jWd">
+                            <rect key="frame" x="0.0" y="20.333333333333375" width="180.33333333333334" height="34.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Try Again"/>
+                            <connections>
+                                <action selector="tryAgainClicked:" destination="-1" eventType="touchUpInside" id="HZW-Ca-Jj7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZpU-5c-szb" secondAttribute="trailing" id="3lc-ez-oFL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="VqC-RO-O5o" secondAttribute="leading" constant="12" id="FbJ-4O-7KH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VqC-RO-O5o" secondAttribute="trailing" constant="12" id="K0g-W5-c7A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZpU-5c-szb" secondAttribute="bottom" id="LXo-cq-DMY"/>
+                <constraint firstItem="ZpU-5c-szb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OSi-fA-yd6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VqC-RO-O5o" secondAttribute="bottom" constant="12" id="cQt-c5-bkz"/>
+                <constraint firstItem="ZpU-5c-szb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dKJ-dY-ALR"/>
+                <constraint firstItem="Oqm-1h-Iou" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gst-5R-RfL"/>
+                <constraint firstItem="Oqm-1h-Iou" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uaG-xA-Gpn"/>
+            </constraints>
+            <point key="canvasLocation" x="74" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
