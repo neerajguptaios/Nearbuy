@@ -59,7 +59,7 @@ class VenueListViewModel: VenueListViewModelProtocol{
     
     func getVenues() {
         guard selectedLon != nil, selectedLat != nil else {
-            // location is not fetched.
+            // location is not fetched. show error
             return
         }
         semaphore.wait()
@@ -82,6 +82,9 @@ class VenueListViewModel: VenueListViewModelProtocol{
         
     func willDisplayIndexPath(indexPath: IndexPath) {
         // need to fetch more venues
+        if indexPath.row >= self.dataSource.count {
+            loadMoreVenues()
+        }
     }
     
     
