@@ -38,8 +38,10 @@ class VenueListViewModel: VenueListViewModelProtocol{
     
     private let semaphore : DispatchSemaphore = DispatchSemaphore(value: 1)
     
+    private var currentPage : Int = 1
+    
     var venueSearchApiRequestParam: VenueSearchApiRequesstParam {
-        return VenueSearchApiRequesstParam(lat: selectedLat.unwrappedValue(or: Double.zero), lon: selectedLon.unwrappedValue(or: Double.zero), range: rangeString, searchString: searchString)
+        return VenueSearchApiRequesstParam(lat: selectedLat.unwrappedValue(or: Double.zero), lon: selectedLon.unwrappedValue(or: Double.zero), range: rangeString, currentPage: currentPage, searchString: searchString)
     }
     
     func getVenueForIndexPath(indexPath: IndexPath) -> VenueDTO?{
@@ -56,30 +58,19 @@ class VenueListViewModel: VenueListViewModelProtocol{
     }
     
     func getVenues() {
-        
-        isFetchVenuesApiCallInProgress = true
-        venueSearchApiService.fetchVenues(with: venueSearchApiRequestParam) { [weak self] result in
-            guard let self else { return}
-            isFetchVenuesApiCallInProgress = false
-            switch result {
-            case .success(let response):
-                self.processVenuedResponse(response)
-            case .failure(let error):
-                error.logDetails()
-                self.delegate?.didReceivedErrorWhileFetchingVenues(errorMessage: error.reason)
-
-            }
-        }
-    }
-    
-    
-    func loadMoreVenues() {
-        guard !isFetchVenuesApiCallInProgress else {
+        guard selectedLon != nil, selectedLat != nil else {
+            // location is not fetched.
             return
         }
+        semaphore.wait()
+        dataSource.removeAll()
+        delegate?.reloadCompleteTableView(completion: { completed in
+            semaphore.signal()
+        })
         
-        getVenues()
+        fetchVenuesFromServer()
     }
+    
     
     func getNumberOfVenues() -> Int {
         return dataSource.count
@@ -97,6 +88,32 @@ class VenueListViewModel: VenueListViewModelProtocol{
 }
 
 extension VenueListViewModel {
+    
+    private func fetchVenuesFromServer(){
+        isFetchVenuesApiCallInProgress = true
+        venueSearchApiService.fetchVenues(with: venueSearchApiRequestParam) { [weak self] result in
+            guard let self else { return}
+            isFetchVenuesApiCallInProgress = false
+            switch result {
+            case .success(let response):
+                self.processVenuedResponse(response)
+            case .failure(let error):
+                error.logDetails()
+                self.delegate?.didReceivedErrorWhileFetchingVenues(errorMessage: error.reason)
+
+            }
+        }
+    }
+    
+    private func loadMoreVenues() {
+        guard !isFetchVenuesApiCallInProgress else {
+            return
+        }
+        // update page
+        currentPage += 1
+        fetchVenuesFromServer()
+    }
+
     private func processVenuedResponse(_ venuesDto: VenueListResponseDTO) {
         if let venues = venuesDto.venues {
             self.semaphore.wait()

@@ -20,7 +20,12 @@ class VenueListViewController: UIViewController {
             searchBar.delegate = self
         }
     }
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!{
+        didSet{
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
     
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var emptyStateStackView: UIStackView!
@@ -53,6 +58,7 @@ class VenueListViewController: UIViewController {
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
+            viewModel.getVenues()
         }
         
         // Do any additional setup after loading the view.
@@ -60,11 +66,14 @@ class VenueListViewController: UIViewController {
     
     
     @IBAction func tryAgainClicked(_ sender: Any) {
-        
+        viewModel.getVenues()
     }
     
     @IBAction func distanceSlderValueChanged(_ sender: Any) {
+        viewModel.updateRange(value: distanceSlider.value)
         
+        let miles = Int(distanceSlider.value)
+        sliderLabel.text = "Restaurants within \(miles) miles of current location"
     }
     
 }
@@ -106,6 +115,11 @@ extension VenueListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension VenueListViewController : VenueListViewModelDelegate{
+    func reloadCompleteTableView(completion: ((Bool) -> Void)) {
+        tableView.reloadData()
+        completion(true)
+    }
+    
     func update(indexPaths: [IndexPath], completion: ((_ completed: Bool) -> Void)) {
         tableView.beginUpdates()
         tableView.insertRows(at: indexPaths, with: .automatic)

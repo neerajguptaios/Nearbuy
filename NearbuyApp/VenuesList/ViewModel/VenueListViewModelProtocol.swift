@@ -16,7 +16,6 @@ protocol VenueListViewModelProtocol {
     func updateRange(value: Float)
     
     func getVenues()
-    func loadMoreVenues()
     
     func getNumberOfVenues() -> Int
     func getVenueForIndexPath(indexPath: IndexPath) -> VenueDTO?
@@ -29,6 +28,7 @@ protocol VenueListViewModelProtocol {
 
 protocol VenueListViewModelDelegate: AnyObject {
     func update(indexPaths: [IndexPath], completion: ((_ completed: Bool) -> Void))
+    func reloadCompleteTableView(completion: ((_ completed: Bool) -> Void))
     func didReceivedErrorWhileFetchingVenues(errorMessage: String)
     func didReceivedEmptyResponse()
 }
