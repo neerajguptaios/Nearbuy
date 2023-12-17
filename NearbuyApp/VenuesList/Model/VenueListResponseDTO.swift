@@ -19,7 +19,7 @@ struct VenueDTO: Codable{
     let extendedAddress: String?
     
     func getCompleteAddress() -> String{
-        let add = [address, extendedAddress].flatMap{$0}
+        let add = [address, extendedAddress].compactMap{$0}
         return add.joined(separator: ", ")
     }
 }
@@ -28,4 +28,16 @@ struct VenueListMeta: Codable{
     let total: Int?
     let page: Int?
     let perPage: Int?
+    
+    func isNextBatchAvailable() -> Bool?{
+        guard let total = total, let page = page, let perPage = perPage else {
+            return nil
+        }
+        if perPage * page >= total {
+            return false
+        }
+        else{
+            return true
+        }
+    }
 }

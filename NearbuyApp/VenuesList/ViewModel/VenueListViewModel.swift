@@ -52,7 +52,7 @@ extension VenueListViewModel: VenueListViewModelProtocol {
     }
     
     func updateRange(value: Float) {
-        self.selectedRange = value
+        self.selectedRange = value.roundTo(1)
         scheduleWorkItemToFetchVenues()
     }
     
@@ -69,6 +69,7 @@ extension VenueListViewModel: VenueListViewModelProtocol {
         dataSource.removeAll()
         delegate?.reloadCompleteTableView(completion: {[weak self] completed in
             self?.semaphore.signal()
+            self?.nextBatchAvailable = true
             self?.fetchVenuesFromServer()
         })
         
@@ -85,7 +86,8 @@ extension VenueListViewModel: VenueListViewModelProtocol {
 
     func willDisplayIndexPath(indexPath: IndexPath) {
         // need to fetch more venues
-        if indexPath.row >= self.dataSource.count {
+        print(indexPath)
+        if indexPath.row >= self.dataSource.count - 1 {
             loadMoreVenues()
         }
     }
@@ -97,12 +99,12 @@ extension VenueListViewModel {
     func scheduleWorkItemToFetchVenues(){
         workItem?.cancel()
         let tempWorkItem = DispatchWorkItem { [weak self] in
-            self?.fetchVenuesFromServer()
+            self?.getVenues()
         }
         
         workItem = tempWorkItem
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1), execute: tempWorkItem)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: tempWorkItem)
     }
     
     private func fetchVenuesFromServer(){
@@ -122,7 +124,7 @@ extension VenueListViewModel {
     }
     
     private func loadMoreVenues() {
-        guard !isFetchVenuesApiCallInProgress else {
+        guard !isFetchVenuesApiCallInProgress && nextBatchAvailable else {
             return
         }
         // update page
@@ -132,6 +134,7 @@ extension VenueListViewModel {
 
     private func processVenuedResponse(_ venuesDto: VenueListResponseDTO) {
         if let venues = venuesDto.venues {
+            self.nextBatchAvailable = (venuesDto.meta?.isNextBatchAvailable()).unwrappedValue(or: false)
             self.semaphore.wait()
             let startIndex = self.dataSource.count
             self.dataSource.append(contentsOf: venues)
@@ -144,9 +147,10 @@ extension VenueListViewModel {
         }
         else{
             delegate?.didReceivedEmptyResponse()
+            self.nextBatchAvailable = false
         }
     }
-    
+        
     private func prepareIndexPathsToReload(for startIndex: Int,  endIndex: Int) -> [IndexPath]? {
         var newIndexPaths: [IndexPath] = []
         

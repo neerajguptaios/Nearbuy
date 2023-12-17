@@ -118,6 +118,10 @@ extension VenueListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.viewModel.willDisplayIndexPath(indexPath: indexPath)
+    }
 }
 
 extension VenueListViewController : VenueListViewModelDelegate{
