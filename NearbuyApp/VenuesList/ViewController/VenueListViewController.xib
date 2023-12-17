@@ -13,7 +13,7 @@
                 <outlet property="distanceSlider" destination="LIH-ms-h3w" id="rfu-P3-9Z9"/>
                 <outlet property="emptyStateStackView" destination="Oqm-1h-Iou" id="FUS-pc-c7Q"/>
                 <outlet property="errorMessageLabel" destination="ALa-QW-TFS" id="f2n-gd-dG1"/>
-                <outlet property="searchBar" destination="UIN-sv-DvQ" id="yyV-4R-aRC"/>
+                <outlet property="searchBar" destination="bPL-Rh-baw" id="JGu-qv-zQs"/>
                 <outlet property="sliderLabel" destination="bB7-x8-l5U" id="LoP-nX-803"/>
                 <outlet property="tableView" destination="ZpU-5c-szb" id="yhb-mX-LBm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,17 +24,19 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bPL-Rh-baw">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="zI2-hq-Y9p"/>
+                    </connections>
+                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZpU-5c-szb">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="115" width="393" height="658.66666666666663"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <searchBar key="tableFooterView" contentMode="redraw" id="UIN-sv-DvQ">
-                        <rect key="frame" x="0.0" y="894" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </searchBar>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VqC-RO-O5o">
-                    <rect key="frame" x="-12" y="761.66666666666663" width="393" height="44.333333333333371"/>
+                    <rect key="frame" x="-12" y="773.66666666666663" width="393" height="44.333333333333371"/>
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="LIH-ms-h3w">
                             <rect key="frame" x="-2" y="0.0" width="397" height="31"/>
@@ -74,13 +76,16 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZpU-5c-szb" secondAttribute="trailing" id="3lc-ez-oFL"/>
+                <constraint firstItem="ZpU-5c-szb" firstAttribute="top" secondItem="bPL-Rh-baw" secondAttribute="bottom" id="5gW-MV-CLo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="VqC-RO-O5o" secondAttribute="leading" constant="12" id="FbJ-4O-7KH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VqC-RO-O5o" secondAttribute="trailing" constant="12" id="K0g-W5-c7A"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZpU-5c-szb" secondAttribute="bottom" id="LXo-cq-DMY"/>
                 <constraint firstItem="ZpU-5c-szb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OSi-fA-yd6"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VqC-RO-O5o" secondAttribute="bottom" constant="12" id="cQt-c5-bkz"/>
-                <constraint firstItem="ZpU-5c-szb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dKJ-dY-ALR"/>
+                <constraint firstItem="VqC-RO-O5o" firstAttribute="top" secondItem="ZpU-5c-szb" secondAttribute="bottom" id="USz-I8-iSf"/>
+                <constraint firstItem="bPL-Rh-baw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UwI-nG-kyz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VqC-RO-O5o" secondAttribute="bottom" id="cQt-c5-bkz"/>
                 <constraint firstItem="Oqm-1h-Iou" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gst-5R-RfL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bPL-Rh-baw" secondAttribute="trailing" id="mqy-qi-4na"/>
+                <constraint firstItem="bPL-Rh-baw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ryT-8B-hub"/>
                 <constraint firstItem="Oqm-1h-Iou" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uaG-xA-Gpn"/>
             </constraints>
             <point key="canvasLocation" x="74" y="20"/>

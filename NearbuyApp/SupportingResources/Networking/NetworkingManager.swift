@@ -27,6 +27,7 @@ final class NetworkingManager {
             return customJsonDecoder
         } else {
             let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             customJsonDecoder = jsonDecoder
             return jsonDecoder
         }

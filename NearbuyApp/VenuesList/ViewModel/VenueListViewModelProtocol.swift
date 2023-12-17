@@ -11,19 +11,20 @@ protocol VenueListViewModelProtocol {
     
     var delegate: VenueListViewModelDelegate? { get set }
     var venueSearchApiService: VenueSearchApiProtocol { get }
+    var selectedRange: Float { get }
     
     func updateLacation(lat: Double, lon: Double)
     func updateRange(value: Float)
+    func getRangeString() -> String
     
     func getVenues()
     
     func getNumberOfVenues() -> Int
     func getVenueForIndexPath(indexPath: IndexPath) -> VenueDTO?
-    
-    func isNextBatchAvailable() -> Bool
-    
+        
     func willDisplayIndexPath(indexPath: IndexPath)
 }
+
 
 
 protocol VenueListViewModelDelegate: AnyObject {

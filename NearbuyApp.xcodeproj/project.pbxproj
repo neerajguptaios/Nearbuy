@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F82DB5242B2D792700C1619B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5232B2D792700C1619B /* AppDelegate.swift */; };
 		F82DB5262B2D792700C1619B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5252B2D792700C1619B /* SceneDelegate.swift */; };
-		F82DB52B2B2D792700C1619B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82DB5292B2D792700C1619B /* Main.storyboard */; };
 		F82DB52D2B2D792900C1619B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82DB52C2B2D792900C1619B /* Assets.xcassets */; };
 		F82DB5302B2D792900C1619B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82DB52E2B2D792900C1619B /* LaunchScreen.storyboard */; };
 		F82DB53B2B2D792900C1619B /* NearbuyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB53A2B2D792900C1619B /* NearbuyAppTests.swift */; };
@@ -61,7 +60,6 @@
 		F82DB5202B2D792700C1619B /* NearbuyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbuyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82DB5232B2D792700C1619B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F82DB5252B2D792700C1619B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F82DB52A2B2D792700C1619B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F82DB52C2B2D792900C1619B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F82DB52F2B2D792900C1619B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F82DB5312B2D792900C1619B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				F82DB5532B2D79C300C1619B /* WebView */,
 				F82DB5232B2D792700C1619B /* AppDelegate.swift */,
 				F82DB5252B2D792700C1619B /* SceneDelegate.swift */,
-				F82DB5292B2D792700C1619B /* Main.storyboard */,
 				F82DB52C2B2D792900C1619B /* Assets.xcassets */,
 				F82DB52E2B2D792900C1619B /* LaunchScreen.storyboard */,
 				F82DB5312B2D792900C1619B /* Info.plist */,
@@ -388,7 +385,6 @@
 				F82DB58F2B2D91FA00C1619B /* VenueListViewController.xib in Resources */,
 				F82DB5302B2D792900C1619B /* LaunchScreen.storyboard in Resources */,
 				F82DB52D2B2D792900C1619B /* Assets.xcassets in Resources */,
-				F82DB52B2B2D792700C1619B /* Main.storyboard in Resources */,
 				F82DB5572B2D79EA00C1619B /* WebViewController.xib in Resources */,
 				F82DB57C2B2D80EA00C1619B /* VenueListTableViewCell.xib in Resources */,
 			);
@@ -473,14 +469,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F82DB5292B2D792700C1619B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F82DB52A2B2D792700C1619B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F82DB52E2B2D792900C1619B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -621,11 +609,13 @@
 				DEVELOPMENT_TEAM = ZJWB5A8D6U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NearbuyApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need to show nearby restaurants";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Need to show nearby restaurants";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need to show nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,11 +639,13 @@
 				DEVELOPMENT_TEAM = ZJWB5A8D6U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NearbuyApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need to show nearby restaurants";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Need to show nearby restaurants";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need to show nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

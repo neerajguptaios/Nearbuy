@@ -14,17 +14,15 @@ struct VenueSearchApiRequesstParam {
     
     var currentPage: Int
     var batchSize: Int
-    var totalElements: Int?
     
     var searchString: String?
     
-    init(lat: Double, lon: Double, range: String, currentPage: Int = 0, batchSize: Int = 10, totalElements: Int? = nil, searchString: String?) {
+    init(lat: Double, lon: Double, range: String, currentPage: Int = 0, batchSize: Int = 10, searchString: String?) {
         self.lat = lat
         self.lon = lon
         self.range = range
         self.currentPage = currentPage
         self.batchSize = batchSize
-        self.totalElements = totalElements
     }
 }
 
@@ -38,7 +36,7 @@ class VenueSearchApiService: VenueSearchApiProtocol {
         queeryParam[ApiConstants.clientIdKey] = ApiConstants.clientIdValue
         
         NetworkingManager.shared.getData(requestURLString: endpoint,
-                                         queryParam: requestQueryParams.convertToDictionary(),
+                                         queryParam: queeryParam,
                                          customHeader: nil,
                                          resultType: VenueListResponseDTO.self) { result in
             DispatchQueue.main.async {

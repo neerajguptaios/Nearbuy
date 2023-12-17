@@ -7,54 +7,57 @@
 
 import Foundation
 
-class VenueListViewModel: VenueListViewModelProtocol{
-    
-    
+private let defaultSliderValue: Float = 5.0
+
+class VenueListViewModel{
+
     init(venueSearchApiService: VenueSearchApiProtocol = VenueSearchApiService()) {
         self.venueSearchApiService = venueSearchApiService
     }
     
-    private var selectedLat: Double?
-    private var selectedLon: Double?
     
-    var rangeString : String {
+    var delegate: VenueListViewModelDelegate?
+    var venueSearchApiService: VenueSearchApiProtocol
+
+    
+    
+    private var rangeString : String {
         return "\(selectedRange)mi"
     }
     
+    private(set) var selectedRange: Float = defaultSliderValue
     
-    private var selectedRange: Float = 0.0
+    private var selectedLat: Double?
+    private var selectedLon: Double?
     private var searchString : String?
-    
-    
     private var dataSource: [VenueDTO] = []
-    
-    var delegate: VenueListViewModelDelegate?
-    
     private var nextBatchAvailable = true
-    
-    var venueSearchApiService: VenueSearchApiProtocol
-    
     private var isFetchVenuesApiCallInProgress = false
-    
     private let semaphore : DispatchSemaphore = DispatchSemaphore(value: 1)
-    
     private var currentPage : Int = 1
-    
-    var venueSearchApiRequestParam: VenueSearchApiRequesstParam {
+    private var workItem : DispatchWorkItem?
+    private var venueSearchApiRequestParam: VenueSearchApiRequesstParam {
         return VenueSearchApiRequesstParam(lat: selectedLat.unwrappedValue(or: Double.zero), lon: selectedLon.unwrappedValue(or: Double.zero), range: rangeString, currentPage: currentPage, searchString: searchString)
     }
     
-    func getVenueForIndexPath(indexPath: IndexPath) -> VenueDTO?{
-        return dataSource[safe: indexPath.row]
-    }
 
-    func updateLacation(lat: Double, lon: Double) {
+}
+
+
+extension VenueListViewModel: VenueListViewModelProtocol {
+    
+    func updateLacation(lat: Double, lon: Double){
         self.selectedLat = lat
         self.selectedLon = lon
     }
     
     func updateRange(value: Float) {
         self.selectedRange = value
+        scheduleWorkItemToFetchVenues()
+    }
+    
+    func getRangeString() -> String{
+        return "\(Int(selectedRange)) miles"
     }
     
     func getVenues() {
@@ -64,33 +67,43 @@ class VenueListViewModel: VenueListViewModelProtocol{
         }
         semaphore.wait()
         dataSource.removeAll()
-        delegate?.reloadCompleteTableView(completion: { completed in
-            semaphore.signal()
+        delegate?.reloadCompleteTableView(completion: {[weak self] completed in
+            self?.semaphore.signal()
+            self?.fetchVenuesFromServer()
         })
         
-        fetchVenuesFromServer()
     }
     
     
     func getNumberOfVenues() -> Int {
         return dataSource.count
     }
-    
-    func isNextBatchAvailable() -> Bool {
-        nextBatchAvailable
+
+    func getVenueForIndexPath(indexPath: IndexPath) -> VenueDTO?{
+        return dataSource[safe: indexPath.row]
     }
-        
+
     func willDisplayIndexPath(indexPath: IndexPath) {
         // need to fetch more venues
         if indexPath.row >= self.dataSource.count {
             loadMoreVenues()
         }
     }
-    
-    
 }
 
+
 extension VenueListViewModel {
+    
+    func scheduleWorkItemToFetchVenues(){
+        workItem?.cancel()
+        let tempWorkItem = DispatchWorkItem { [weak self] in
+            self?.fetchVenuesFromServer()
+        }
+        
+        workItem = tempWorkItem
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1), execute: tempWorkItem)
+    }
     
     private func fetchVenuesFromServer(){
         isFetchVenuesApiCallInProgress = true

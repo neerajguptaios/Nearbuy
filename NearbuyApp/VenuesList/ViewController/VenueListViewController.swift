@@ -29,18 +29,15 @@ class VenueListViewController: UIViewController {
     
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var emptyStateStackView: UIStackView!
-    
-    private var viewModel: VenueListViewModelProtocol{
-        didSet {
-            viewModel.delegate = self
-        }
-    }
-
+        
+    private var viewModel: VenueListViewModelProtocol
     private let locationManager = CLLocationManager()
 
     init(viewModel: VenueListViewModelProtocol) {
         self.viewModel =  viewModel
         super.init(nibName: Self.className, bundle: nil)
+        
+        self.viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -52,16 +49,22 @@ class VenueListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.distanceSlider.value = viewModel.selectedRange
+        updateSliderLabel()
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestAlwaysAuthorization()
         
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-            viewModel.getVenues()
-        }
         
-        // Do any additional setup after loading the view.
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.locationManager.startUpdatingLocation()
+                DispatchQueue.main.async {
+                    self.viewModel.getVenues()
+                }
+            }
+        }
     }
     
     
@@ -71,9 +74,11 @@ class VenueListViewController: UIViewController {
     
     @IBAction func distanceSlderValueChanged(_ sender: Any) {
         viewModel.updateRange(value: distanceSlider.value)
-        
-        let miles = Int(distanceSlider.value)
-        sliderLabel.text = "Restaurants within \(miles) miles of current location"
+        updateSliderLabel()
+    }
+    
+    private func updateSliderLabel(){
+        sliderLabel.text = "Restaurants within \(viewModel.getRangeString()) of current location"
     }
     
 }
@@ -105,10 +110,11 @@ extension VenueListViewController: UITableViewDelegate, UITableViewDataSource {
 
         if(cell == nil)
         {
-            cell = UITableViewCell(style: .default, reuseIdentifier: reuseIdentifierString)
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifierString)
         }
         if let model = viewModel.getVenueForIndexPath(indexPath: indexPath) {
             cell?.textLabel?.text = model.name
+            cell?.detailTextLabel?.text = model.getCompleteAddress()
         }
         return cell!
     }

@@ -7,19 +7,24 @@
 
 import Foundation
 
-struct VenueListResponseDTO: Decodable {
+struct VenueListResponseDTO: Codable{
     let venues: [VenueDTO]?
     let meta: VenueListMeta?
 }
 
-struct VenueDTO: Decodable{
+struct VenueDTO: Codable{
     let name: String?
     let city: String?
     let address: String?
     let extendedAddress: String?
+    
+    func getCompleteAddress() -> String{
+        let add = [address, extendedAddress].flatMap{$0}
+        return add.joined(separator: ", ")
+    }
 }
 
-struct VenueListMeta: Decodable{
+struct VenueListMeta: Codable{
     let total: Int?
     let page: Int?
     let perPage: Int?
