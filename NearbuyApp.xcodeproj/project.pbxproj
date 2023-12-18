@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80B33CE2B3085BC00A909B8 /* VenueListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80B33CD2B3085BC00A909B8 /* VenueListViewModelTests.swift */; };
 		F82DB5242B2D792700C1619B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5232B2D792700C1619B /* AppDelegate.swift */; };
 		F82DB5262B2D792700C1619B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5252B2D792700C1619B /* SceneDelegate.swift */; };
 		F82DB52D2B2D792900C1619B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82DB52C2B2D792900C1619B /* Assets.xcassets */; };
 		F82DB5302B2D792900C1619B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82DB52E2B2D792900C1619B /* LaunchScreen.storyboard */; };
-		F82DB53B2B2D792900C1619B /* NearbuyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB53A2B2D792900C1619B /* NearbuyAppTests.swift */; };
 		F82DB5452B2D792900C1619B /* NearbuyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5442B2D792900C1619B /* NearbuyAppUITests.swift */; };
 		F82DB5472B2D792900C1619B /* NearbuyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5462B2D792900C1619B /* NearbuyAppUITestsLaunchTests.swift */; };
 		F82DB5562B2D79EA00C1619B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5542B2D79EA00C1619B /* WebViewController.swift */; };
 		F82DB5572B2D79EA00C1619B /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82DB5552B2D79EA00C1619B /* WebViewController.xib */; };
-		F82DB55B2B2D7A4B00C1619B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB55A2B2D7A4B00C1619B /* UITableView+Extension.swift */; };
-		F82DB55D2B2D7AB300C1619B /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB55C2B2D7AB300C1619B /* UITableViewCell+Extension.swift */; };
 		F82DB55F2B2D7B0400C1619B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB55E2B2D7B0400C1619B /* NSObject+Extension.swift */; };
 		F82DB5612B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5602B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift */; };
 		F82DB5632B2D7B2800C1619B /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5622B2D7B2800C1619B /* Optional+Extension.swift */; };
@@ -27,8 +25,6 @@
 		F82DB56C2B2D7D7A00C1619B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB56B2B2D7D7A00C1619B /* NetworkError.swift */; };
 		F82DB56F2B2D7D9600C1619B /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB56E2B2D7D9600C1619B /* ApiConstants.swift */; };
 		F82DB5712B2D800900C1619B /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5702B2D800900C1619B /* GeneralUtil.swift */; };
-		F82DB57B2B2D80EA00C1619B /* VenueListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5792B2D80EA00C1619B /* VenueListTableViewCell.swift */; };
-		F82DB57C2B2D80EA00C1619B /* VenueListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82DB57A2B2D80EA00C1619B /* VenueListTableViewCell.xib */; };
 		F82DB57F2B2D820800C1619B /* VenueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB57E2B2D820800C1619B /* VenueListViewModel.swift */; };
 		F82DB5812B2D821800C1619B /* VenueListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5802B2D821800C1619B /* VenueListViewModelProtocol.swift */; };
 		F82DB5852B2D847E00C1619B /* VenueListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB5842B2D847E00C1619B /* VenueListRequestDTO.swift */; };
@@ -58,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F80B33CC2B3085BB00A909B8 /* NearbuyAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NearbuyAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		F80B33CD2B3085BC00A909B8 /* VenueListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModelTests.swift; sourceTree = "<group>"; };
 		F82DB5202B2D792700C1619B /* NearbuyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbuyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82DB5232B2D792700C1619B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F82DB5252B2D792700C1619B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,14 +63,11 @@
 		F82DB52F2B2D792900C1619B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F82DB5312B2D792900C1619B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F82DB5362B2D792900C1619B /* NearbuyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbuyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F82DB53A2B2D792900C1619B /* NearbuyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbuyAppTests.swift; sourceTree = "<group>"; };
 		F82DB5402B2D792900C1619B /* NearbuyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbuyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82DB5442B2D792900C1619B /* NearbuyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbuyAppUITests.swift; sourceTree = "<group>"; };
 		F82DB5462B2D792900C1619B /* NearbuyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbuyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F82DB5542B2D79EA00C1619B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F82DB5552B2D79EA00C1619B /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
-		F82DB55A2B2D7A4B00C1619B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		F82DB55C2B2D7AB300C1619B /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		F82DB55E2B2D7B0400C1619B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		F82DB5602B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Extension.swift"; sourceTree = "<group>"; };
 		F82DB5622B2D7B2800C1619B /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
@@ -82,8 +77,6 @@
 		F82DB56B2B2D7D7A00C1619B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F82DB56E2B2D7D9600C1619B /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		F82DB5702B2D800900C1619B /* GeneralUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUtil.swift; sourceTree = "<group>"; };
-		F82DB5792B2D80EA00C1619B /* VenueListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListTableViewCell.swift; sourceTree = "<group>"; };
-		F82DB57A2B2D80EA00C1619B /* VenueListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueListTableViewCell.xib; sourceTree = "<group>"; };
 		F82DB57E2B2D820800C1619B /* VenueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModel.swift; sourceTree = "<group>"; };
 		F82DB5802B2D821800C1619B /* VenueListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewModelProtocol.swift; sourceTree = "<group>"; };
 		F82DB5842B2D847E00C1619B /* VenueListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListRequestDTO.swift; sourceTree = "<group>"; };
@@ -158,7 +151,8 @@
 		F82DB5392B2D792900C1619B /* NearbuyAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				F82DB53A2B2D792900C1619B /* NearbuyAppTests.swift */,
+				F80B33CD2B3085BC00A909B8 /* VenueListViewModelTests.swift */,
+				F80B33CC2B3085BB00A909B8 /* NearbuyAppTests-Bridging-Header.h */,
 			);
 			path = NearbuyAppTests;
 			sourceTree = "<group>";
@@ -195,8 +189,6 @@
 		F82DB5592B2D7A3800C1619B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F82DB55A2B2D7A4B00C1619B /* UITableView+Extension.swift */,
-				F82DB55C2B2D7AB300C1619B /* UITableViewCell+Extension.swift */,
 				F82DB55E2B2D7B0400C1619B /* NSObject+Extension.swift */,
 				F82DB5602B2D7B1600C1619B /* UIActivityIndicatorView+Extension.swift */,
 				F82DB5622B2D7B2800C1619B /* Optional+Extension.swift */,
@@ -230,7 +222,6 @@
 				F82DB5832B2D826A00C1619B /* Model */,
 				F82DB5822B2D826400C1619B /* Service */,
 				F82DB57D2B2D81F000C1619B /* ViewModel */,
-				F82DB5782B2D80C200C1619B /* Cells */,
 				F82DB5732B2D806800C1619B /* ViewController */,
 			);
 			path = VenuesList;
@@ -243,15 +234,6 @@
 				F82DB58D2B2D91FA00C1619B /* VenueListViewController.xib */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F82DB5782B2D80C200C1619B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				F82DB5792B2D80EA00C1619B /* VenueListTableViewCell.swift */,
-				F82DB57A2B2D80EA00C1619B /* VenueListTableViewCell.xib */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		F82DB57D2B2D81F000C1619B /* ViewModel */ = {
@@ -352,6 +334,7 @@
 					};
 					F82DB5352B2D792900C1619B = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 						TestTargetID = F82DB51F2B2D792700C1619B;
 					};
 					F82DB53F2B2D792900C1619B = {
@@ -389,7 +372,6 @@
 				F82DB5302B2D792900C1619B /* LaunchScreen.storyboard in Resources */,
 				F82DB52D2B2D792900C1619B /* Assets.xcassets in Resources */,
 				F82DB5572B2D79EA00C1619B /* WebViewController.xib in Resources */,
-				F82DB57C2B2D80EA00C1619B /* VenueListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,8 +399,6 @@
 				F82DB57F2B2D820800C1619B /* VenueListViewModel.swift in Sources */,
 				F82DB56F2B2D7D9600C1619B /* ApiConstants.swift in Sources */,
 				F82DB5852B2D847E00C1619B /* VenueListRequestDTO.swift in Sources */,
-				F82DB55D2B2D7AB300C1619B /* UITableViewCell+Extension.swift in Sources */,
-				F82DB55B2B2D7A4B00C1619B /* UITableView+Extension.swift in Sources */,
 				F82DB5672B2D7C7400C1619B /* Array+Extension.swift in Sources */,
 				F82DB5712B2D800900C1619B /* GeneralUtil.swift in Sources */,
 				F82DB5652B2D7C2200C1619B /* Encodable+Extension.swift in Sources */,
@@ -432,7 +412,6 @@
 				F82DB56A2B2D7D4500C1619B /* NetworkingManager.swift in Sources */,
 				F82DB56C2B2D7D7A00C1619B /* NetworkError.swift in Sources */,
 				F82DB5892B2D868300C1619B /* VenueSearchApiService.swift in Sources */,
-				F82DB57B2B2D80EA00C1619B /* VenueListTableViewCell.swift in Sources */,
 				F82DB5562B2D79EA00C1619B /* WebViewController.swift in Sources */,
 				F82DB5872B2D865500C1619B /* VenueSearchApiProtocol.swift in Sources */,
 				F82DB55F2B2D7B0400C1619B /* NSObject+Extension.swift in Sources */,
@@ -444,7 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82DB53B2B2D792900C1619B /* NearbuyAppTests.swift in Sources */,
+				F80B33CE2B3085BC00A909B8 /* VenueListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +647,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZJWB5A8D6U;
@@ -677,6 +657,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "times-internet.NearbuyAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "NearbuyAppTests/NearbuyAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbuyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NearbuyApp";
@@ -688,6 +670,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZJWB5A8D6U;
@@ -697,6 +680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "times-internet.NearbuyAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "NearbuyAppTests/NearbuyAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbuyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NearbuyApp";

@@ -10,15 +10,15 @@ import Foundation
 private let defaultSliderValue: Float = 5.0
 
 class VenueListViewModel{
+    
+    private let paginationThreshold: Int = 2
 
     init(venueSearchApiService: VenueSearchApiProtocol = VenueSearchApiService()) {
         self.venueSearchApiService = venueSearchApiService
     }
     
-    
     var delegate: VenueListViewModelDelegate?
     var venueSearchApiService: VenueSearchApiProtocol
-
     
     
     private var rangeString : String {
@@ -37,7 +37,7 @@ class VenueListViewModel{
     private var currentPage : Int = 1
     private var workItem : DispatchWorkItem?
     private var venueSearchApiRequestParam: VenueSearchApiRequesstParam {
-        return VenueSearchApiRequesstParam(lat: selectedLat.unwrappedValue(or: Double.zero), lon: selectedLon.unwrappedValue(or: Double.zero), range: rangeString, currentPage: currentPage, searchString: searchString)
+        return VenueSearchApiRequesstParam(lat: selectedLat.unwrappedValue(or: Double.zero), lon: selectedLon.unwrappedValue(or: Double.zero), range: rangeString, currentPage: currentPage, searchString: self.searchString)
     }
     
 
@@ -45,6 +45,9 @@ class VenueListViewModel{
 
 
 extension VenueListViewModel: VenueListViewModelProtocol {
+    func updateSearchString(searchString: String?) {
+        self.searchString = searchString
+    }
     
     func updateLacation(lat: Double, lon: Double){
         self.selectedLat = lat
@@ -87,7 +90,7 @@ extension VenueListViewModel: VenueListViewModelProtocol {
     func willDisplayIndexPath(indexPath: IndexPath) {
         // need to fetch more venues
         print(indexPath)
-        if indexPath.row >= self.dataSource.count - 1 {
+        if indexPath.row >= self.dataSource.count - paginationThreshold {
             loadMoreVenues()
         }
     }

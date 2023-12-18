@@ -15,10 +15,11 @@ protocol VenueListViewModelProtocol {
     
     func updateLacation(lat: Double, lon: Double)
     func updateRange(value: Float)
+    
+    func updateSearchString(searchString: String?)
+    
     func getRangeString() -> String
-    
     func getVenues()
-    
     func getNumberOfVenues() -> Int
     func getVenueForIndexPath(indexPath: IndexPath) -> VenueDTO?
         

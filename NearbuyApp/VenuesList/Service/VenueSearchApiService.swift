@@ -23,6 +23,7 @@ struct VenueSearchApiRequesstParam {
         self.range = range
         self.currentPage = currentPage
         self.batchSize = batchSize
+        self.searchString = searchString
     }
 }
 

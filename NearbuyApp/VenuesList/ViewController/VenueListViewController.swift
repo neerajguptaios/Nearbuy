@@ -95,7 +95,12 @@ extension VenueListViewController : CLLocationManagerDelegate {
 //MARK: - UISearchBarDelegate
 extension VenueListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        viewModel.updateSearchString(searchString: searchText)
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        viewModel.updateSearchString(searchString: searchBar.text)
+        viewModel.getVenues()
     }
 }
 

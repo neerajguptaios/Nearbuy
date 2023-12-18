@@ -7,17 +7,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A771F22C-78FA-40C2-86D9-48488D4CA38D"
+            uuid = "8795C536-DA6D-454A-AB21-2278B520698B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NearbuyApp/VenuesList/ViewModel/VenueListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "willDisplayIndexPath(indexPath:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "updateSearchString(searchString:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96B34F7E-4098-4C66-828C-142217F4A43D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NearbuyApp/VenuesList/ViewModel/VenueListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "fetchVenuesFromServer()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "96B34F7E-4098-4C66-828C-142217F4A43D - ccd7d24fe315da8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NearbuyApp.VenueListViewModel.fetchVenuesFromServer() -&gt; ()"
+                  moduleName = "NearbuyApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neeraj.gupta1/Documents/niku/projects/NearbuyApp/NearbuyApp/VenuesList/ViewModel/VenueListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "96B34F7E-4098-4C66-828C-142217F4A43D - ccd7d24fe315da8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NearbuyApp.VenueListViewModel.fetchVenuesFromServer() -&gt; ()"
+                  moduleName = "NearbuyApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neeraj.gupta1/Documents/niku/projects/NearbuyApp/NearbuyApp/VenuesList/ViewModel/VenueListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "96B34F7E-4098-4C66-828C-142217F4A43D - 61e10c9956dac6ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;NearbuyApp.VenueListResponseDTO, NearbuyApp.NetworkError&gt;) -&gt; () in NearbuyApp.VenueListViewModel.fetchVenuesFromServer() -&gt; ()"
+                  moduleName = "NearbuyApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neeraj.gupta1/Documents/niku/projects/NearbuyApp/NearbuyApp/VenuesList/ViewModel/VenueListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
